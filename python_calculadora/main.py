@@ -3,21 +3,23 @@ from tkinter import *
 root = Tk()
 root.title('CALCULADORA')
 root.geometry('480x360')
-root.minsize(480,360)
-root.maxsize(480,360)
+root.minsize(480, 360)
+root.maxsize(480, 360)
 
 root.configure(background='#282828')
 
 # variaveis globais
 numero1 = ""
 numero2 = ""
-adicao = FALSE
-subtracao = FALSE
-divisao = FALSE
-multiplicacao = FALSE
+adicao = False
+subtracao = False
+divisao = False
+multiplicacao = False
 
-e = Entry(root, width=15, borderwidth=4, relief=FLAT, fg='#FFFFFF', bg='#a7a28f', 
-font=('futura', 25, 'bold'), justify=CENTER)
+e = Entry(
+    root, width=15, borderwidth=4, relief=FLAT, fg='#FFFFFF', bg='#a7a28f',
+    font=('futura', 25, 'bold'), justify=CENTER
+    )
 e.grid(
     row=0,
     column=0,
@@ -75,18 +77,18 @@ def botao_igual():
 
     numero2 = e.get()
     e.delete(0, END)
-    if adicao == TRUE:
+    if adicao is True:
         e.insert(0, int(numero1)+int(numero2))
-        adicao = FALSE
-    if subtracao == TRUE:
+        adicao = False
+    if subtracao is True:
         e.insert(0, int(numero1)-int(numero2))
-        subtracao = FALSE
-    if multiplicacao == TRUE:
+        subtracao = False
+    if multiplicacao is True:
         e.insert(0, int(numero1)*int(numero2))
-        multiplicacao = FALSE
-    if divisao == TRUE:
+        multiplicacao = False
+    if divisao is True:
         e.insert(0, int(numero1)/int(numero2))
-        divisao = FALSE
+        divisao = False
 
 
 # botoes de operacoes
@@ -95,16 +97,16 @@ adicao = Button(
                 text='+',
                 padx=50,
                 pady=20,
-                command = botao_adicao,
+                command=botao_adicao,
                 fg='#FFFFFF',
                 activeforeground='#FFFFFF',
                 bg='#320064',
-                 activebackground='#240086',
-                relief= FLAT,
+                activebackground='#240086',
+                relief=FLAT,
                 font=('futura', 12, 'bold')
 )
 adicao.grid(row=0, column=4)
-subtracao = Button (
+subtracao = Button(
                 root,
                 text='-',
                 padx=50,
@@ -146,7 +148,7 @@ divisao = Button(
                 font=('futura', 12, 'bold')
 )
 divisao.grid(row=3, column=4)
-#primeira fileira
+# primeira fileira
 um = Button(
             root,
             text='1',
@@ -187,7 +189,7 @@ tres = Button(
             activeforeground='#FFFFFF',
             bg='#320064',
             activebackground='#240086',
-            relief= FLAT,
+            relief=FLAT,
             font=('futura', 12, 'bold')
 )
 tres.grid(row=1, column=3)
@@ -203,7 +205,7 @@ quatro = Button(
             activeforeground='#FFFFFF',
             bg='#320064',
             activebackground='#240086',
-            relief= FLAT,
+            relief=FLAT,
             font=('futura', 12, 'bold')
 )
 quatro.grid(row=2, column=1)
@@ -218,7 +220,7 @@ cinco = Button(
             activeforeground='#FFFFFF',
             bg='#320064',
             activebackground='#240086',
-            relief= FLAT,
+            relief=FLAT,
             font=('futura', 12, 'bold')
 )
 cinco.grid(row=2, column=2)
@@ -233,7 +235,7 @@ seis = Button(
             activeforeground='#FFFFFF',
             bg='#320064',
             activebackground='#240086',
-            relief= FLAT,
+            relief=FLAT,
             font=('futura', 12, 'bold')
 )
 seis.grid(row=2, column=3)
@@ -281,7 +283,7 @@ nove = Button(
 )
 nove.grid(row=3, column=3)
 # quarta fileira
-zero = Button(  
+zero = Button(
             root,
             text='0',
             padx=110,
@@ -325,4 +327,3 @@ igual = Button(
 igual.grid(row=4, column=4)
 
 root.mainloop()
-
