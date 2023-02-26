@@ -1,4 +1,7 @@
 from tkinter import *
+import pandas as pd
+import win32com.client as win32
+
 
 root = Tk()
 root.title('CALCULADORA')

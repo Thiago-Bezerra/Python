@@ -23,7 +23,7 @@ windows = Tk()
 windows.title('Cotacao Atual das Moedas')
 texto_orientacao = Label(windows, text='Clique no botao para exibir a cotacao')
 texto_orientacao.grid(row=0, column=0, columnspan=4)
-botao_inicia = Button(
+botao_inicia = Button( 
     windows, text='exibir cotacao', command=pegar_cotacoes
 )
 botao_inicia.grid(row=1, column=0, columnspan=2)
