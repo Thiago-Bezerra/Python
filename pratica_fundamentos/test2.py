@@ -12,23 +12,23 @@
 
 
 
-N = int(input())
+# N = int(input())
 
-while(N > 0):
-    # A = int(input())
-    # B = int(input())
-    A, B = input().strip().split(' ')
-    if int(A) >= int(B) and (int(A) - int(B))%10 == 0:
-        print("encaixa")
-    else:
-        print("nao encaixa")
-    N -=1
-
-# qte = int(input())
-
-# for i in range(qte):
-    # A, B = list(map(str,input().split()))
-    # if A[-len(B):] == B:
-        # print ("encaixa")
+# while(N > 0):
+    # # A = int(input())
+    # # B = int(input())
+    # A, B = input().strip().split(' ')
+    # if int(A) >= int(B) and (int(A) - int(B))%10 == 0:
+        # print("encaixa")
     # else:
         # print("nao encaixa")
+    # N -=1
+
+qte = int(input())
+
+for i in range(qte):
+    A, B = list(map(str,input().split()))
+    if A[-len(B):] == B:
+        print ("encaixa")
+    else:
+        print("nao encaixa")
