@@ -51,13 +51,24 @@
 # carros = ("gol")
 # print(isinstance(carros, tuple))
 
-T = int(input())
+# T = int(input())
 
-for i in range(T):
-  N = int(input())
-  K = int(input())
-  garrafas_cheias = (N//K)+(N%K)
+# for i in range(T):
+#   N = int(input())
+#   K = int(input())
+#   garrafas_cheias = (N//K)+(N%K)
   
-  print(garrafas_cheias)
+#   print(garrafas_cheias)
 
-print((4000//7)+(4000%7))
+# print((4000//7)+(4000%7))
+
+class Foo:
+    def hello(self):
+        print(self.__class__.__name__.lower())
+
+class Bar(Foo):
+    def hello(self):
+        return super().hello()
+
+bar = Bar()
+bar.hello()
