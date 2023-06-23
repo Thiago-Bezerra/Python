@@ -13,6 +13,12 @@ eixo_y_obj1 = altura/2
 eixo_x_obj2 = randint(40, 600)
 eixo_y_obj2 = randint(50, 430)
 
+pontos = 0
+# estil de fonte: tipo da fonte, tamanho da fonte, fonte em negrito e
+# texto serrilhando
+fonte = pygame.font.SysFont('arial', 40, True, False)
+
+
 # DEFINIR O TAMANHO DA JANELA E O NOME DA JANELA DO JOGO
 tela = pygame.display.set_mode((largura, altura))
 pygame.display.set_caption("Jogo")
@@ -23,6 +29,8 @@ relogio = pygame.time.Clock()
 while True:
     relogio.tick(20)
     tela.fill((0, 0, 0))
+    mensagem = f'Pontos: {pontos}'
+    texto_formatado = fonte.render(mensagem, True, (255, 255, 255))
     for event in pygame.event.get():
         if event.type == QUIT:
             pygame.quit()
@@ -43,4 +51,7 @@ while True:
     if obj1.colliderect(obj2):
         eixo_x_obj2 = randint(40, 600)
         eixo_y_obj2 = randint(50, 430)
+        pontos += 1
+
+    tela.blit(texto_formatado, (450, 40))
     pygame.display.update()
